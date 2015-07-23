@@ -1,1 +1,2 @@
-# node-cal
+# node-cal [![Build Status](https://travis-ci.org/NoahYarian/node-cal.svg)](https://travis-ci.org/NoahYarian/node-cal) [![Code Climate](https://codeclimate.com/github/NoahYarian/node-cal/badges/gpa.svg)](https://codeclimate.com/github/NoahYarian/node-cal) [![Test Coverage](https://codeclimate.com/github/NoahYarian/node-cal/badges/coverage.svg)](https://codeclimate.com/github/NoahYarian/node-cal/coverage)
+[![Dependency Status](https://david-dm.org/NoahYarian/node-cal.svg)](https://david-dm.org/NoahYarian/node-cal) [![devDependency Status](https://david-dm.org/NoahYarian/node-cal/dev-status.svg)](https://david-dm.org/NoahYarian/node-cal#info=devDependencies)
