@@ -22,9 +22,9 @@ describe('node-cal', function () {
 });
 
 describe('getMonthYearStr', function() {
-  it('should return the same as the first line of cal', function (done) {
+  it('should return the same as the first two lines of cal', function (done) {
     cp.exec('cal', function(err, stdout) {
-      stdout.slice(0, stdout.indexOf('Su')).should.equal(monthYearStr());
+      stdout.slice(0, stdout.indexOf('Sa\n') + 3).should.equal(monthYearStr());
       done();
     });
   });
