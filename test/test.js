@@ -44,4 +44,7 @@ describe('zeller', function() {
   it('should return the correct weekday for 12-16-1900', function () {
     zeller(12, 16, 19, 0).should.equal(1);
   });
+  it('should return the correct weekday for 2-29-2012', function () {
+    zeller(2, 29, 20, 12).should.equal(4);
+  });
 });
