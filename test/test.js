@@ -2,7 +2,7 @@
 
 var should = require('chai').should();
 var cp = require('child_process');
-var month = require('../lib/month');
+var getMonth = require('../lib/month');
 var zeller = require('../lib/zeller');
 
 describe('Mocha + Chai', function () {
@@ -22,10 +22,28 @@ describe('node-cal', function () {
   });
 });
 
-describe('month.getfirstLines', function() {
-  it('should return the same as the first two lines of cal', function (done) {
-    cp.exec('cal', function(err, stdout) {
-      stdout.slice(0, stdout.indexOf('Sa\n') + 2).should.equal(month.getFirstLines());
+describe('getMonth', function() {
+  it('should return the same month text as cal for 7-2015', function (done) {
+    cp.exec('cal 7 2015', function(err, stdout) {
+      stdout.should.equal(getMonth(7, 2015));
+      done();
+    });
+  });
+  it('should return the same month text as cal for 1-2015', function (done) {
+    cp.exec('cal 1 2015', function(err, stdout) {
+      stdout.should.equal(getMonth(1, 2015));
+      done();
+    });
+  });
+  it('should return the same month text as cal for 3-2014', function (done) {
+    cp.exec('cal 3 2014', function(err, stdout) {
+      stdout.should.equal(getMonth(3, 2014));
+      done();
+    });
+  });
+  it('should return the same month text as cal for 12-1900', function (done) {
+    cp.exec('cal 12 1900', function(err, stdout) {
+      stdout.should.equal(getMonth(12, 1900));
       done();
     });
   });
@@ -35,8 +53,8 @@ describe('zeller', function() {
   it('should return the correct weekday for 7-23-2015', function () {
     zeller(7, 23, 20, 15).should.equal(5);
   });
-  it('should return the correct weekday for 1-3-2015', function () {
-    zeller(1, 3, 20, 15).should.equal(7);
+  it('should return the correct weekday for 1-1-2015', function () {
+    zeller(1, 1, 20, 15).should.equal(5);
   });
   it('should return the correct weekday for 3-3-2014', function () {
     zeller(3, 3, 20, 14).should.equal(2);
