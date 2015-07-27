@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha --recursive",
     "test-unit": "mocha --recursive test/unit",
     "test-integration": "mocha --recursive test/integration",
     "test-cov": "istanbul cover _mocha -- --recursive",
