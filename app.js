@@ -10,7 +10,7 @@ if (!opt1) {
   var date = new Date();
   var thisMonth = date.getMonth() + 1;
   var thisYear = date.getFullYear();
-  console.log(getMonth(thisMonth, thisYear), "month");
+  console.log(getMonth(thisMonth, thisYear, "month"));
 } else if (opt2) {
   if (opt1 <= 12 &&
       opt1 >= 1 &&
@@ -18,8 +18,8 @@ if (!opt1) {
       opt2 <= 9999 &&
       opt2 >= 1753 &&
       opt2 % 1 === 0) {
-    console.log(getMonth(opt1, opt2), "month");
-  } else {
+    console.log(getMonth(opt1, opt2, "month"));
+  // } else {
     //display help
   }
 } else { // opt1 && !opt2
@@ -27,7 +27,7 @@ if (!opt1) {
       opt1 >= 1753 &&
       opt1 % 1 === 0) {
     console.log(getYear(opt1));
-  } else {
+  // } else {
     //display help
   }
 }
