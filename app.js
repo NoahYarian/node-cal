@@ -12,6 +12,7 @@ if (!opt1) {
   var thisYear = date.getFullYear();
   console.log(getMonth(thisMonth, thisYear, "month"));
 } else if (opt2) {
+  opt1 = convertMonth(opt1);
   if (opt1 <= 12 &&
       opt1 >= 1 &&
       opt1 % 1 === 0 &&
@@ -29,5 +30,21 @@ if (!opt1) {
     console.log(getYear(opt1));
   // } else {
     //display help
+  }
+}
+
+function convertMonth(str) {
+  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var shortMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  if (!isNaN(+str)) {
+    return str;
+  } else {
+    for (var i = 0; i < months.length; i++) {
+      if (str.toLowerCase() === months[i].toLowerCase() || str.toLowerCase() === shortMonths[i].toLowerCase()) {
+        return i + 1;
+      // } else if (months[i].indexOf(str)) {
+
+      }
+    }
   }
 }

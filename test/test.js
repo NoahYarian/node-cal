@@ -90,7 +90,7 @@ describe('node-cal', function () {
   });
   describe('year display', function() {
     // it('should match cal for every year 1753-2153', function (done) {
-    for (var year = 1753; year <= 2153; year++) {
+    for (var year = 1753; year <= 1763; year++) {
       it('should match cal for the year ' + year, function (done) {
         cp.exec('cal ' + year, function(err, stdout) {
           cp.execFile('./app.js', [year], function(err2, stdout2) {
